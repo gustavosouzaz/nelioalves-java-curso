@@ -6,16 +6,12 @@ public class Main {
         Scanner sc = new Scanner(System.in);
 
 
-        String x,y,z;
+        int v1 = sc.nextInt();
+        int v2 = sc.nextInt();
 
-        x = sc.nextLine();
-        y = sc.nextLine();
-        z = sc.nextLine();
+        int r = v1 + v2;
 
-        System.out.println(x);
-        System.out.println(y);
-        System.out.println(z);
-
+        System.out.println("A soma dos números " + v1 + " + " + v2 + " = " + r );
 
 
         sc.close();
