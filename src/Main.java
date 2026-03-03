@@ -5,15 +5,17 @@ public class Main {
 
         Scanner sc = new Scanner(System.in);
 
-        System.out.println("Informe 4 valores e descubra a diferença de algum  deles:");
-        int a = sc.nextInt();
-        int b = sc.nextInt();
-        int c = sc.nextInt();
-        int d = sc.nextInt();
+        System.out.println("Informe seu número de funcionário, horas trabalhadas e salario. SIGA ESSA ORDEM");
+       int funcionario = sc.nextInt();
+       double horasTrabalhadas = sc.nextDouble();
+       double salario = sc.nextDouble();
 
-        int r = a * b - c * d;
+       double salarioFinal = horasTrabalhadas * salario;
 
-        System.out.println("A diferencia dos produtos é: " + r);
+        System.out.println("Número do funcionário: " + funcionario);
+        System.out.println("Salário Final: " + "R$" + salarioFinal);
+
+
 
 
 
