@@ -5,16 +5,16 @@ public class Main {
 
         Scanner sc = new Scanner(System.in);
 
+        System.out.println("Informe o valor do raio de um círculo:");
 
-        int v1 = sc.nextInt();
-        int v2 = sc.nextInt();
+        double v1 = sc.nextDouble();
+        double area = 3.14159 * Math.pow(v1,2);
 
-        int r = v1 + v2;
-
-        System.out.println("A soma dos números " + v1 + " + " + v2 + " = " + r );
+        System.out.println("O resultado do raio desse círculo é: " + area);
 
 
-        sc.close();
+
+
 
         }
     }
