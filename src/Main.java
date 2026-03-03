@@ -5,12 +5,16 @@ public class Main {
 
         Scanner sc = new Scanner(System.in);
 
-        System.out.println("Informe o valor do raio de um círculo:");
+        System.out.println("Informe 4 valores e descubra a diferença de algum  deles:");
+        int a = sc.nextInt();
+        int b = sc.nextInt();
+        int c = sc.nextInt();
+        int d = sc.nextInt();
 
-        double v1 = sc.nextDouble();
-        double area = 3.14159 * Math.pow(v1,2);
+        int r = a * b - c * d;
 
-        System.out.println("O resultado do raio desse círculo é: " + area);
+        System.out.println("A diferencia dos produtos é: " + r);
+
 
 
 
