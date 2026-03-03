@@ -5,22 +5,20 @@ public class Main {
 
         Scanner sc = new Scanner(System.in);
 
-        System.out.println("Informe seu número de funcionário, horas trabalhadas e salario. SIGA ESSA ORDEM");
-       int funcionario = sc.nextInt();
-       double horasTrabalhadas = sc.nextDouble();
-       double salario = sc.nextDouble();
 
-       double salarioFinal = horasTrabalhadas * salario;
+        System.out.println("Informe as coisas para a primiera peça:");
+        int codigoPeca = sc.nextInt();
+        int numeroPecas = sc.nextInt();
+        double valorPecas = sc.nextDouble();
+        System.out.println("------------------------------------");
 
-        System.out.println("Número do funcionário: " + funcionario);
-        System.out.println("Salário Final: " + "R$" + salarioFinal);
+        System.out.println("Informe as coisas para a segunda peça:");
+        int codigoPeca2 = sc.nextInt();
+        int numeroPecas2 = sc.nextInt();
+        double valorPecas2 = sc.nextDouble();
 
+        double resultado  = numeroPecas * valorPecas + numeroPecas2 * valorPecas2;
 
-
-
-
-
-
-
-        }
+        System.out.println("VALOR A PAGAR: " + "R$" + resultado);
+    }
     }
