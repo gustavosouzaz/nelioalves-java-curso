@@ -4,17 +4,16 @@ public class Main {
     public static void main(String[] args) {
 
         Scanner sc = new Scanner(System.in);
+         int minutos = sc.nextInt();
 
-        double a = sc.nextDouble();
-        double b = sc.nextDouble();
-        double c = sc.nextDouble();
-        double pi = 3.14159;
+         double conta = 50.0;
+         if(minutos > 100) {
+             conta = conta + (minutos - 100) * 2.0;
+         }
 
-        System.out.println("Triangulo: " + ((a * c) / 2));
-        System.out.println("Circulo: " + (pi * Math.pow(c,2)));
-        System.out.println("Trapezio: " + ((a + b) * c / 2));
-        System.out.println("Quadrado: " + (b * b));
-        System.out.println("Retangulo: " + (a * b));
+        System.out.printf("Valor da conta = R$%.2f%n", conta);
+
+      sc.close();
 
     }
-    }
+}
