@@ -7,14 +7,15 @@ public class Main {
 
         int N = sc.nextInt();
 
+        int D = N % 2;
 
-        if (N < 0) {
-            System.out.println("NEGATIVO");
+        if (D == 0) {
+            System.out.println("PAR");
         }else {
-            System.out.println("NAO NEGATIVO");
+            System.out.println("IMPAR");
         }
 
-        sc.close();
+
 
         }
     }
