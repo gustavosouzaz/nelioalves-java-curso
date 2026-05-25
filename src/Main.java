@@ -7,29 +7,27 @@ public class Main {
         Locale.setDefault(Locale.US);
         Scanner sc = new Scanner(System.in);
 
-        double x = sc.nextDouble();
-        double y = sc.nextDouble();
+        double salario = sc.nextDouble();
 
-        if (x == 0.0 && y == 0.0) {
-            System.out.println("Origem");
+        double imposto;
+        if (salario <= 2000.0) {
+            imposto = 0.0;
         }
-        else if (x == 0.0) {
-            System.out.println("Eixo Y");
+        else if (salario <= 3000.0) {
+            imposto = (salario - 2000.0) * 0.08;
         }
-        else if (y == 0.0) {
-            System.out.println("Eixo X");
-        }
-        else if (x > 0.0 && y > 0.0) {
-            System.out.println("Q1");
-        }
-        else if (x < 0.0 && y > 0.0) {
-            System.out.println("Q2");
-        }
-        else if (x < 0.0 && y < 0.0) {
-            System.out.println("Q3");
+        else if (salario <= 4500.0) {
+            imposto = (salario - 3000.0) * 0.18 + 1000.0 * 0.08;
         }
         else {
-            System.out.println("Q4");
+            imposto = (salario - 4500.0) * 0.28 + 1500.0 * 0.18 + 1000.0 * 0.08;
+        }
+
+        if (imposto == 0.0) {
+            System.out.println("Isento");
+        }
+        else {
+            System.out.printf("R$ %.2f%n", imposto);
         }
 
 
