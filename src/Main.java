@@ -9,12 +9,12 @@ public class Main {
         int n = sc.nextInt();
 
         for (int i=1; i<=n; i++) {
-            if (n % i == 0) {
-                System.out.println(i);
-            }
+
+            int primeiro = i;
+            int segundo = i * i;
+            int terceiro = i * i * i;
+            System.out.printf("%d %d %d%n", primeiro, segundo, terceiro);
         }
-
-
 
     }
     }
