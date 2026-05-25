@@ -5,17 +5,22 @@ public class Main {
 
         Scanner sc = new Scanner(System.in);
 
-        int A = sc.nextInt();
-        int B = sc.nextInt();
+        int horaInicial = sc.nextInt();
+        int horaFinal = sc.nextInt();
 
-        int S = A / B;
+        int duracao;
 
-        if(A % B == 0 || B % A == 0) {
-            System.out.println("São Multíplos");
-        }else {
-            System.out.println("Não são Multíplos");
+        if (horaInicial < horaFinal) {
+            duracao = horaFinal - horaInicial;
         }
-        sc.close();
+        else {
+            duracao = 24 - horaInicial + horaFinal;
 
         }
+
+        System.out.println("O JOGO DUROU " + duracao + " HORA(S)");
+
+
+
+    }
     }
