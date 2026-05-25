@@ -7,22 +7,29 @@ public class Main {
         Locale.setDefault(Locale.US);
         Scanner sc = new Scanner(System.in);
 
-        double numero = sc.nextDouble();
+        double x = sc.nextDouble();
+        double y = sc.nextDouble();
 
-        if (numero < 0.0 || numero > 100.0) {
-            System.out.println("Fora de intervalo");
+        if (x == 0.0 && y == 0.0) {
+            System.out.println("Origem");
         }
-        else if (numero <= 25.0) {
-            System.out.println("Intervalo [0,25]");
+        else if (x == 0.0) {
+            System.out.println("Eixo Y");
         }
-        else if (numero <= 50.0) {
-            System.out.println("Intervalo (25,50]");
+        else if (y == 0.0) {
+            System.out.println("Eixo X");
         }
-        else if (numero <= 75.0) {
-            System.out.println("Intervalo (50,75]");
+        else if (x > 0.0 && y > 0.0) {
+            System.out.println("Q1");
+        }
+        else if (x < 0.0 && y > 0.0) {
+            System.out.println("Q2");
+        }
+        else if (x < 0.0 && y < 0.0) {
+            System.out.println("Q3");
         }
         else {
-            System.out.println("Intervalo (75,100]");
+            System.out.println("Q4");
         }
 
 
