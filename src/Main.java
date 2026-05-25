@@ -5,17 +5,17 @@ public class Main {
 
         Scanner sc = new Scanner(System.in);
 
-        int N = sc.nextInt();
+        int A = sc.nextInt();
+        int B = sc.nextInt();
 
-        int D = N % 2;
+        int S = A / B;
 
-        if (D == 0) {
-            System.out.println("PAR");
+        if(A % B == 0 || B % A == 0) {
+            System.out.println("São Multíplos");
         }else {
-            System.out.println("IMPAR");
+            System.out.println("Não são Multíplos");
         }
-
-
+        sc.close();
 
         }
     }
