@@ -1,7 +1,4 @@
-import entidades.Employee;
-import entidades.Product;
-import entidades.Rectangle;
-import entidades.Triangle;
+import entidades.*;
 
 import java.util.Locale;
 import java.util.Scanner;
@@ -12,24 +9,22 @@ public class Main {
         Locale.setDefault(Locale.US);
         Scanner sc = new Scanner(System.in);
 
-        Employee emp = new Employee();
+        Student student = new Student();
 
-        System.out.print("Name: ");
-        emp.name = sc.nextLine();
-        System.out.print("Gross salary: ");
-        emp.grossSalary = sc.nextDouble();
-        System.out.print("Tax: ");
-        emp.tax = sc.nextDouble();
+        student.name = sc.nextLine();
+        student.grade1 = sc.nextDouble();
+        student.grade2 = sc.nextDouble();
+        student.grade3 = sc.nextDouble();
 
-        System.out.println();
-        System.out.println("Employee: " + emp);
-        System.out.println();
-        System.out.print("Which percentage to increase salary? ");
-        double percentage = sc.nextDouble();
-        emp.increaseSalary(percentage);
+        System.out.printf("FINAL GRADE: %.2f%n", student.finalGrade());
 
-        System.out.println();
-        System.out.println("Updated data: " + emp);
+        if (student.finalGrade() < 60.0) {
+            System.out.println("FAILED");
+            System.out.printf("MISSING %.2f POINTS%n", student.missingPoints());
+        }
+        else {
+            System.out.println("PASS");
+        }
 
     }
     }
