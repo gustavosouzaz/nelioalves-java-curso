@@ -1,4 +1,5 @@
 import entidades.Product;
+import entidades.Rectangle;
 import entidades.Triangle;
 
 import java.util.Locale;
@@ -10,35 +11,15 @@ public class Main {
         Locale.setDefault(Locale.US);
         Scanner sc = new Scanner(System.in);
 
-        Product product = new Product();
-        System.out.println("Enter product data: ");
-        System.out.println("Name: ");
-        product.name = sc.nextLine();
-        System.out.println("Price: ");
-        product.price = sc.nextDouble();
-        System.out.println("Quantity in stock: ");
-        product.quantity = sc.nextInt();
+        Rectangle rect = new Rectangle();
 
-        System.out.println();
-        System.out.println("Product data: " + product);
+        System.out.println("Enter rectangle width and height:");
+        rect.width = sc.nextDouble();
+        rect.height = sc.nextDouble();
 
-        System.out.println();
-        System.out.print("Enter thee number of products to be added in stock: ");
-        int quantity = sc.nextInt();
-        product.addProducts(quantity);
-
-
-        System.out.println();
-        System.out.println("Update Product : " + product);
-
-        System.out.println();
-        System.out.print("Enter thee number of products to be removed in stock: ");
-        quantity = sc.nextInt();
-        product.removeproducts(quantity);
-
-        System.out.println();
-        System.out.println("Remove Product : " + product);
-
+        System.out.printf("AREA = %.2f%n", rect.area());
+        System.out.printf("PERIMETER = %.2f%n", rect.perimeter());
+        System.out.printf("DIAGONAL = %.2f%n", rect.diagonal());
 
     }
     }
