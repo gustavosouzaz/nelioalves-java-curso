@@ -29,6 +29,10 @@ public class Main {
         quantity = sc.nextInt();
         product.addProducts(quantity);
 
+        product.setName("Computer");
+        System.out.println("Update name: " + product.getName());
+
+
         System.out.println();
         System.out.println("Updated data: " + product);
 
