@@ -9,22 +9,36 @@ public class Main {
         Locale.setDefault(Locale.US);
         Scanner sc = new Scanner(System.in);
 
-        Student student = new Student();
 
-        student.name = sc.nextLine();
-        student.grade1 = sc.nextDouble();
-        student.grade2 = sc.nextDouble();
-        student.grade3 = sc.nextDouble();
 
-        System.out.printf("FINAL GRADE: %.2f%n", student.finalGrade());
+        System.out.println("Enter product data: ");
+        System.out.print("Name: ");
+        String name = sc.nextLine();
 
-        if (student.finalGrade() < 60.0) {
-            System.out.println("FAILED");
-            System.out.printf("MISSING %.2f POINTS%n", student.missingPoints());
-        }
-        else {
-            System.out.println("PASS");
-        }
+        System.out.print("Price: ");
+        double price = sc.nextDouble();
+
+        System.out.print("Quantity in stock: ");
+        int quantity = sc.nextInt();
+        Product product = new Product(name, price, quantity);
+
+        System.out.println();
+        System.out.println("Product data: " + product);
+        System.out.println();
+        System.out.print("Enter the number of products to be added in stock: ");
+        quantity = sc.nextInt();
+        product.addProducts(quantity);
+
+        System.out.println();
+        System.out.println("Updated data: " + product);
+
+        System.out.println();
+        System.out.print("Enter the number of products to be removed from stock: ");
+        quantity = sc.nextInt();
+        product.removeproducts(quantity);
+
+        System.out.println();
+        System.out.println("Updated data: " + product);
 
     }
-    }
+}

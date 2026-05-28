@@ -6,6 +6,11 @@ public class Product {
    public double price;
    public int quantity;
 
+   public Product(String name, double price, int quantity) {
+          this.name = name;
+
+   }
+
    public double totalValueInStock() {
        return price * quantity;
    }
