@@ -9,42 +9,31 @@ public class Main {
         Locale.setDefault(Locale.US);
         Scanner sc = new Scanner(System.in);
 
+        Rent[] vect = new Rent[10];
 
-        System.out.println("Quantas pessoas serão digitadas?");
+        System.out.print("How many rooms will be rentend? ");
         int n = sc.nextInt();
 
-        String[] nomes = new String[n];
-        int[] idades = new int[n];
-        double[] altura = new double[n];
+        for(int i = 1; i<=n; i++) {
+            System.out.println("Rent #" + i + ":");
+            System.out.print("Name: ");
+            sc.nextLine();
+            String name = sc.nextLine();
+            System.out.print("Email: ");
+            String email = sc.next();
+            System.out.print("Room: ");
+            int roomNumber = sc.nextInt();
 
-
-        for(int i=0; i<n; i++) {
-            System.out.println("Dados da " + (i+1) + "a pessoa");
-            System.out.print("Nome: ");
-            nomes[i] = sc.next();
-            System.out.print("Idade: ");
-            idades[i] = sc.nextInt();
-            System.out.println("Altura: ");
-            altura[i] = sc.nextDouble();
+            vect[roomNumber] = new Rent(name, email);
         }
-        double soma = 0.0;
-        for(int i=0; i<n; i++) {
-            soma = soma + altura[i];
-        }
-        double mediaAltura = soma / n;
 
         System.out.println();
-        System.out.printf("Altura média: %.2f%n", mediaAltura);
-
-        int cont = 0;
-        for(int i=0; i<n; i++) {
-            if(idades[i] < 16) {
-                cont = cont + 1;
+        System.out.println("Buse rooms:");
+        for(int i = 1; 1 < 10; i++) {
+            if(vect[i]  != null) {
+                System.out.println(i + ": " + vect[i]);
             }
         }
-        double percent = cont * 100.0 / n;
-
-        System.out.printf("Pessoas com menos de 16 anos: %.1f%%", percent);
 
     }
 }
