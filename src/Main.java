@@ -1,39 +1,41 @@
 import entidades.*;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Locale;
 import java.util.Scanner;
+import java.util.stream.Collectors;
 
 public class Main {
     public static void main(String[] args) {
 
-        Locale.setDefault(Locale.US);
-        Scanner sc = new Scanner(System.in);
+        List<String> list = new ArrayList<>();
 
-        Rent[] vect = new Rent[10];
+        list.add("Cosa");
+        list.add("Maria");
+        list.add("Caio");
+        list.add("Luan");
+        list.add(2, "Marco");
 
-        System.out.print("How many rooms will be rentend? ");
-        int n = sc.nextInt();
+        System.out.println(list.size());
 
-        for(int i = 1; i<=n; i++) {
-            System.out.println("Rent #" + i + ":");
-            System.out.print("Name: ");
-            sc.nextLine();
-            String name = sc.nextLine();
-            System.out.print("Email: ");
-            String email = sc.next();
-            System.out.print("Room: ");
-            int roomNumber = sc.nextInt();
 
-            vect[roomNumber] = new Rent(name, email);
+
+        for (String x : list) {
+            System.out.println(x);
         }
-
-        System.out.println();
-        System.out.println("Buse rooms:");
-        for(int i = 1; 1 < 10; i++) {
-            if(vect[i]  != null) {
-                System.out.println(i + ": " + vect[i]);
-            }
+        System.out.println("----------------------");
+        list.remove(1);
+        list.removeIf(x -> x.charAt(0) == 'C');
+        for(String x : list) {
+            System.out.println(x);
         }
-
+        System.out.println("----------------------");
+        System.out.println("Index of Marco: " + list.indexOf("Marco"));
+        System.out.println("----------------------");
+        List<String> result = list.stream().filter(x -> x.charAt(0) == 'C').collect(Collectors.toList());
+        for(String x : list) {
+            System.out.println(x);
+        }
     }
 }
