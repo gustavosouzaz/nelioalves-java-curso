@@ -9,33 +9,34 @@ import java.util.stream.Collectors;
 public class Main {
     public static void main(String[] args) {
 
-        List<String> list = new ArrayList<>();
+        Locale.setDefault(Locale.US);
+        Scanner sc = new Scanner(System.in);
 
-        list.add("Cosa");
-        list.add("Maria");
-        list.add("Caio");
-        list.add("Luan");
-        list.add(2, "Marco");
+        List<Trabalhador> list = new ArrayList<>();
 
-        System.out.println(list.size());
+        System.out.println("How many employees will be registered? ");
+        int n = sc.nextInt();
 
 
+        for (int i = 0; i < n; i++) {
 
-        for (String x : list) {
-            System.out.println(x);
+            System.out.println();
+            System.out.println("Employee #" + (i + 1) + ":");
+            System.out.print("Id: ");
+            Integer id = sc.nextInt();
+            System.out.println("Name: ");
+            sc.nextLine();
+            String name = sc.nextLine();
+            System.out.println("Salary: ");
+            Double salary = sc.nextDouble();
+
+            Trabalhador emp = new Trabalhador(id,salary,name);
+
+            list.add(emp);
+
+
+
         }
-        System.out.println("----------------------");
-        list.remove(1);
-        list.removeIf(x -> x.charAt(0) == 'C');
-        for(String x : list) {
-            System.out.println(x);
-        }
-        System.out.println("----------------------");
-        System.out.println("Index of Marco: " + list.indexOf("Marco"));
-        System.out.println("----------------------");
-        List<String> result = list.stream().filter(x -> x.charAt(0) == 'C').collect(Collectors.toList());
-        for(String x : list) {
-            System.out.println(x);
-        }
+
     }
 }
