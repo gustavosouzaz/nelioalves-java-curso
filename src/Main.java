@@ -9,23 +9,22 @@ public class Main {
         Locale.setDefault(Locale.US);
         Scanner sc = new Scanner(System.in);
 
-       int n = sc.nextInt();
-       Aparelhos[] vect = new Aparelhos[n];
+        System.out.print("Quantos números você vai digitar? ");
+        int n = sc.nextInt();
 
-       for(int i=0; i<n; i++) {
-           sc.nextLine();
-           String name = sc.nextLine();
-           double price  = sc.nextDouble();
-           vect[i] = new Aparelhos(name, price);
-       }
+        int[] vet = new int[n];
 
-       double sum = 0.0;
-       for(int i=0; i<n; i++) {
-           sum += vect[i].getPrice();
-       }
-       double avg = sum / n;
+        for(int i=0; i<n; i++) {
+            System.out.println("Digite um número: ");
+            vet[i] = sc.nextInt();
+        }
 
-        System.out.printf("AVERAGE PRICE = %.2f%n", avg);
+        System.out.println("Números Negativos:");
+        for(int i=0; i<n; i++) {
+            if(vet[i] < 0) {
+                System.out.println(vet[i]);
+            }
+        }
 
     }
 }
